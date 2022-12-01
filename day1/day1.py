@@ -13,11 +13,11 @@ def day1_v1():
         else:
             elves[-1] += int(i)
 
-    print(f"Part 1: {max(elves)}")
+    print(f"Day 1: Part 1: {max(elves)}")
 
     elves.sort(reverse=True)
 
-    print(f"Part 2: {sum(elves[:3])}")
+    print(f"Day 1: Part 2: {sum(elves[:3])}")
 
 
 def day1_v2():
