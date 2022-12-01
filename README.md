@@ -1,7 +1,7 @@
 # AdventOfCode-2022
 
 This repository contains my solutions to the [Advent of Code 2022](https://adventofcode.com/2022) challenges, written with Python.
-My goal is to optimize to find a soluton that executes in under 1.5 seconds.
+My goal is to optimize to find a soluton that executes in under 1 second.
 
 
 ## Usage
