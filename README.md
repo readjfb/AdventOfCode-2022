@@ -13,4 +13,4 @@ Example:
 ```day1/day1.py```
 
 ## Timing
-In the ```[timing](timing)``` directory, you can find the time it took to run each day's solution and a script to generate a report (```timing.txt```).
+In the [timing](timing/) directory, you can find the time it took to run each day's solution and a script to generate a report (```timing.txt```).
