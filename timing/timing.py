@@ -24,7 +24,7 @@ days = [i for i in os.listdir() if os.path.isdir(i) and i.startswith("day")]
 data = {}
 
 # Loop through each day's code
-for day in days:
+for day in sorted(days, reverse=True):
     print(f"Timing {day}")
     # Get the day number from the directory name
     day_num = day[-1]
