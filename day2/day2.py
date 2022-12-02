@@ -1,4 +1,4 @@
-def day1_v1():
+def day2_v1():
     with open("day2_input.txt", "r") as f:
         puzzle_input = f.read().splitlines()
 
@@ -63,4 +63,4 @@ def day1_v1():
 
 
 if __name__ == "__main__":
-    day1_v1()
+    day2_v1()
