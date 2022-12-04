@@ -45,7 +45,7 @@ for day in sorted(days, reverse=True):
         output = subprocess.run(["python", file_name], capture_output=True, text=True)
         end = time.time()
         times.append(end - start)
-    avg_time = sum(times) / len(times)
+    min_time = min(times)
 
     # Get the output from the code
     output = output.stdout
@@ -55,13 +55,30 @@ for day in sorted(days, reverse=True):
     # Print the output
     print(f"\tPart 1: {part1}", end="\t")
     print(f"Part 2: {part2}", end="\t")
-    print(f"Average for day {day_num}: {avg_time} seconds")
+    print(f"Minimum time for day {day_num}: {min_time} seconds")
 
     # Add the output to the data dictionary
-    data[day] = {"time": avg_time, "part1": part1, "part2": part2, "day": day_num}
+    data[day] = {"time": min_time, "part1": part1, "part2": part2, "day": day_num}
 
     # CD back to the main directory
     os.chdir("..")
+
+# Open the timing.json file
+# This file contains the data from previous runs
+update_data = {}
+
+if os.path.exists("timing/timing.json"):
+    with open("timing/timing.json", "r") as f:
+        update_data = json.load(f)
+
+# Add the new data to the previous data; don't overwrite previous data
+for day in data.keys():
+    if day not in update_data:
+        update_data[day] = data[day]
+        continue
+
+    if data[day]["time"] < update_data[day]["time"]:
+        update_data[day] = data[day]
 
 # Save the data to a file
 with open("timing/timing.json", "w") as f:
