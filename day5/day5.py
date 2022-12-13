@@ -73,5 +73,6 @@ def day5_v1():
 
     print("Part 2:", part2_output)
 
+
 if __name__ == "__main__":
     day5_v1()

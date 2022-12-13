@@ -1,5 +1,6 @@
 # Today, I optimized a single solution for speed and code cleanliness
 
+
 class RopeNode:
     def __init__(self, x, y, tail):
         self.x = x
@@ -17,7 +18,7 @@ class RopeNode:
         poten_new_tail_y = self.tail.y + (1 if self.y > self.tail.y else -1)
 
         # If the move is more than one unit, it is a diagonal move
-        if (abs(self.y - self.tail.y) + abs(self.x - self.tail.x)) > 2:
+        if abs(self.y - self.tail.y) + abs(self.x - self.tail.x) > 2:
             # Move tail one step diagonally towards the new position
             self.tail.perform_move(poten_new_tail_x, poten_new_tail_y)
 

@@ -13,7 +13,9 @@ def day8_v1():
         tree_grid.append([int(x) for x in line.strip()])
         maximum_height = max(maximum_height, max(tree_grid[-1]))
 
-    valid_grid = [[True for x in range(len(tree_grid[0]))] for y in range(len(tree_grid))]
+    valid_grid = [
+        [True for x in range(len(tree_grid[0]))] for y in range(len(tree_grid))
+    ]
 
     # Check for visibility from left to right
     for y in range(len(tree_grid)):

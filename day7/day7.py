@@ -1,10 +1,12 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class directory:
     name: str
     size: int
     children: dict
+
 
 with open("day7_input.txt") as f:
     file_input = f.readlines()
@@ -60,6 +62,7 @@ def calc_size(dir):
         calc_size(child)
         dir.size += child.size
 
+
 calc_size(root_dir)
 
 # Find the sum of the outermost directories with size <= 100000
@@ -67,13 +70,17 @@ def find_outermost_p1(dir):
     if dir.size > 100000:
         return sum([find_outermost_p1(child) for child in dir.children.values()])
     else:
-        return dir.size + sum([find_outermost_p1(child) for child in dir.children.values()])
+        return dir.size + sum(
+            [find_outermost_p1(child) for child in dir.children.values()]
+        )
+
 
 # print the structure
 def print_structure(dir, depth=0):
-    print("  "*depth, dir.name, dir.size)
+    print("  " * depth, dir.name, dir.size)
     for child in dir.children.values():
-        print_structure(child, depth+1)
+        print_structure(child, depth + 1)
+
 
 # print_structure(root_dir)
 
