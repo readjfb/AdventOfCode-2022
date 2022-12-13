@@ -27,7 +27,7 @@ data = {}
 for day in sorted(days, reverse=True):
     print(f"Timing {day}")
     # Get the day number from the directory name
-    day_num = day[-1]
+    day_num = re.findall(r"day(\d+)", day)[0]
 
     # Get the file name
     file_name = f"day{day_num}.py"

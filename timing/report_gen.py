@@ -14,7 +14,7 @@ full_table.field_names = ["Day", "Part 1", "Part 2", "Time (s)", "Under 1s?"]
 for day in data:
     full_table.add_row(
         [
-            data[day]["day"],
+            int(data[day]["day"]),
             data[day]["part1"],
             data[day]["part2"],
             round(data[day]["time"], 5),
