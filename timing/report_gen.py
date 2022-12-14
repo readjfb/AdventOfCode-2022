@@ -12,12 +12,15 @@ full_table.field_names = ["Day", "Part 1", "Part 2", "Time (s)", "Under 1s?"]
 # Put a checkmark in the "Under 1s?" column if the time is under 1 second, otherwise put a cross
 
 for day in data:
+    time_value = str(round(data[day]["time"], 5))
+    # pad the time value with 0s so that the table is aligned
+    time_value = time_value + "0" * (7 - len(time_value))
     full_table.add_row(
         [
             int(data[day]["day"]),
             data[day]["part1"],
             data[day]["part2"],
-            round(data[day]["time"], 5),
+            time_value,
             "✅" if data[day]["time"] < 1 else "❌",
         ]
     )
